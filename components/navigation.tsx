@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
 
@@ -66,7 +65,6 @@ export function Navigation() {
           </div>
           
           <div className="flex items-center gap-4">
-            {/* <ThemeToggle /> */}
             <div className="lg:hidden">
               <Button
                 variant="ghost"
