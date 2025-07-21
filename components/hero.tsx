@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Download, MessageCircle } from "lucide-react"
+import { Github, Linkedin, MessageCircle } from "lucide-react"
 import Image from "next/image"
 
 export function Hero() {
@@ -27,13 +27,10 @@ export function Hero() {
             </div>
 
             <div className="flex flex-wrap items-center gap-4">
-              <Button size="lg" className="gap-2 bg-green-800 hover:bg-green-900 text-white px-8 py-3 rounded-full font-medium">
-                <Download className="h-5 w-5" />
-                Download CV
-              </Button>
-              
-              <Button size="lg" variant="outline" className="gap-2 border-green-800 text-green-800 hover:bg-green-800 hover:text-white px-8 py-3 rounded-full font-medium">
-                Contact Me
+              <Button size="lg" variant="outline" className="gap-2 border-green-800 text-green-800 hover:bg-green-800 hover:text-white px-8 py-3 rounded-full font-medium" asChild>
+                <a href="#contact">
+                  Get in touch
+                </a>
               </Button>
             </div>
 
