@@ -295,14 +295,7 @@ export function Projects() {
                           Achievement
                         </Button>
                       )}
-                      {project.liveUrl && (
-                        <Button size="sm" variant="outline" className="gap-1 border border-gray-300 text-gray-600 hover:bg-gray-50 hover:border-gray-400 shadow-sm hover:shadow-md transition-all duration-200" asChild>
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                            <ExternalLink className="h-3 w-3" />
-                            Live
-                        </a>
-                      </Button>
-                      )}
+              
                       <Button size="sm" variant="outline" className="gap-1 border border-gray-300 text-gray-600 hover:bg-gray-50 hover:border-gray-400 shadow-sm hover:shadow-md transition-all duration-200" asChild>
                         <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                           <Github className="h-3 w-3" />

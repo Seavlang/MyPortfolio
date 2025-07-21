@@ -13,23 +13,14 @@ COPY . .
 
 # Build the application
 RUN yarn build
+FROM node:22.12.0-bullseye-slim AS runner
 
-# Continue write with another slide
-FROM node:22.12.0 AS builder
+COPY --from=builder /app/.next/standalone ./standalone
+COPY --from=builder /app/public ./standalone/public
+COPY --from=builder /app/.next/static ./standalone/.next/static
 
-# Set the working directory
-WORKDIR /app
+# Expose the Next.js default port
+EXPOSE 3000
 
-COPY package*.json ./
-
-# Install production dependencies
-RUN yarn install
-
-# Copy the rest of the application files
-COPY . .
-
-# Build the application
-RUN yarn build
-
-# Continue write with another slide
-
+# Start the Next.js app
+CMD ["node", "./standalone/server.js"]
